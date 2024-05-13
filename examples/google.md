@@ -33,13 +33,13 @@ echo "Open https://console.cloud.google.com/apis/library/sqladmin.googleapis.com
 
 gum input --placeholder "Press the enter key to continue."
 
-export SA_NAME=devops-toolkit
+export SA_NAME="devops-toolkit"
 
 export SA="${SA_NAME}@${PROJECT_ID}.iam.gserviceaccount.com"
 
 gcloud iam service-accounts create $SA_NAME --project $PROJECT_ID
 
-export ROLE=roles/admin
+export ROLE="roles/admin"
 
 gcloud projects add-iam-policy-binding --role $ROLE $PROJECT_ID \
     --member serviceAccount:$SA
