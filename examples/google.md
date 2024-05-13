@@ -16,23 +16,31 @@ devbox shell --config devbox-complete.json
 
 ### Google Project
 
-Create Google project and a service account.
+Create Google project and a service account. Log in or skip if already logged in:
 
 ```bash {"terminalRows":"20"}
 gcloud auth login
+```
 
+Create a new project and add billing account:
+
+```bash
 export PROJECT_ID=dot-$(date +%Y%m%d%H%M%S)
 
 gcloud projects create $PROJECT_ID
 
 echo "Open https://console.cloud.google.com/billing/enable?project=$PROJECT_ID in a browser and **set the billing account**." | gum format
+```
 
-gum input --placeholder "Press the enter key to continue."
+Enable GCP APIs:
 
+```bash
 echo "Open https://console.cloud.google.com/apis/library/sqladmin.googleapis.com?project=$PROJECT_ID in a browser and **enable** the API." | gum format
+```
 
-gum input --placeholder "Press the enter key to continue."
+Create service account:
 
+```bash
 export SA_NAME="devops-toolkit"
 
 export SA="${SA_NAME}@${PROJECT_ID}.iam.gserviceaccount.com"
