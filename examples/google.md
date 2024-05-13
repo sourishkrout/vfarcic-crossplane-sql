@@ -18,7 +18,7 @@ devbox shell --config devbox-complete.json
 
 Create Google project and a service account.
 
-```bash
+```bash {"terminalRows":"20"}
 gcloud auth login
 
 export PROJECT_ID=dot-$(date +%Y%m%d%H%M%S)
