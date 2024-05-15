@@ -1,4 +1,6 @@
 {
     "notebook.stickyScroll.enabled": true,
-    "runme.server.lifecycleIdentity": 0
+    "runme.server.lifecycleIdentity": 0,
+    "runme.terminal.closeOnSuccess": false,
+    "runme.codelens.pasteNewline": true,
 }
